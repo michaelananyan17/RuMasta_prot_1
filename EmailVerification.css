@@ -1,0 +1,114 @@
+.verification-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #3D3D3D 0%, #2E2E2E 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.verification-card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 3rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+  backdrop-filter: blur(10px);
+}
+
+.verification-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.verification-card h2 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.verification-card p {
+  color: #666;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.verification-instructions {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+  text-align: left;
+}
+
+.verification-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.resend-button, .refresh-button, .logout-button {
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.resend-button {
+  background: #667eea;
+  color: white;
+}
+
+.resend-button:hover:not(:disabled) {
+  background: #5a6fd8;
+  transform: translateY(-2px);
+}
+
+.resend-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.refresh-button {
+  background: #4ecdc4;
+  color: white;
+}
+
+.refresh-button:hover {
+  background: #45b7af;
+  transform: translateY(-2px);
+}
+
+.logout-button {
+  background: #ff6b6b;
+  color: white;
+}
+
+.logout-button:hover {
+  background: #ff5252;
+  transform: translateY(-2px);
+}
+
+.success-message {
+  background: #d4edda;
+  color: #155724;
+  padding: 0.75rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+  border: 1px solid #c3e6cb;
+}
+
+.error-message {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 0.75rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+  border: 1px solid #f5c6cb;
+}
