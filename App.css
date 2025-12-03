@@ -1,0 +1,322 @@
+/* src/App.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.App {
+  text-align: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #3D3D3D 0%, #2E2E2E 100%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ENHANCED HEADER STYLES */
+.app-header {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr; /* Three columns for left, center, right */
+  align-items: center;
+  padding: 1.2rem 2.5rem;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  gap: 1rem;
+}
+
+/* Left section - can be used for future elements */
+.header-left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* CENTERED TITLE - 20% larger */
+.header-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 2.4rem; /* 20% larger than original 2rem (2 * 1.2 = 2.4) */
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  background: linear-gradient(45deg, #ffa3a3, #fffb23, #f0e9a1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  animation: titleGlow 3s infinite alternate;
+}
+
+@keyframes titleGlow {
+  0% {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2),
+                  0 0 20px rgba(255, 255, 255, 0.1);
+  }
+  100% {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2),
+                  0 0 30px rgba(78, 205, 196, 0.4),
+                  0 0 40px rgba(255, 215, 0, 0.3);
+  }
+}
+
+/* RIGHT SECTION - Buttons on the right */
+.header-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.app-header nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.level-display {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.3rem;
+}
+
+.level-badge {
+  background: rgba(255, 215, 0, 0.2);
+  color: #ffd700;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  white-space: nowrap;
+}
+
+.welcome-text {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.nav-buttons button {
+  background: linear-gradient(135deg, rgba(78, 205, 196, 0.8), rgba(68, 160, 141, 0.8));
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.nav-buttons button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.nav-buttons .change-level:hover {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9));
+}
+
+.nav-buttons .logout:hover {
+  background: linear-gradient(135deg, rgba(255, 107, 107, 0.9), rgba(255, 82, 82, 0.9));
+}
+
+.back-button {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-1px);
+}
+
+/* Rest of your existing App.css remains below */
+.app-main {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex: 1;
+  width: 100%;
+}
+
+.welcome-section {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 3rem 2rem;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  margin-top: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.welcome-text {
+  font-size: 1rem; /* Slightly larger */
+  font-weight: 600; /* Bolder */
+  color: #ffd700; /* Gold color */
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+  white-space: nowrap;
+  padding: 0.3rem 0.8rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cta-button {
+  background: #4ecdc4;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #45b7af;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.loading-screen {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.loading-spinner {
+  text-align: center;
+}
+
+/* Add footer styles to match your image */
+.app-footer {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 1.5rem 2rem;
+  margin-top: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-content p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin: 0;
+}
+
+.progress-info {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+/* Responsive design for header */
+@media (max-width: 768px) {
+  .app-header {
+    padding: 1rem;
+    grid-template-columns: 1fr; /* Stack on mobile */
+    gap: 1rem;
+  }
+  
+  .header-left,
+  .header-center,
+  .header-right {
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .user-info {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .level-display {
+    align-items: center;
+    text-align: center;
+  }
+  
+  .nav-buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .app-header h1 {
+    font-size: 2rem; /* Slightly smaller on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .nav-buttons button {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .back-button {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  
+  .app-header h1 {
+    font-size: 1.8rem; /* Smaller on very small screens */
+  }
+}
